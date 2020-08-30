@@ -12,13 +12,14 @@ module.exports = {
     module: {
         rules: [
             { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+            { test: /\.ts$/, use: 'ts-loader' }
         ]
     },
-    plugins:[
+    plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            template:path.join(__dirname,'./src/index.html'),
-            filename:'index.html'
+            template: path.join(__dirname, './src/index.html'),
+            filename: 'index.html'
         })
     ]
 }

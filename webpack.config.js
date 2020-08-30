@@ -12,7 +12,7 @@ module.exports = {
     module: {
         rules: [
             { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-            { test: /\.ts$/, use: 'ts-loader' }
+            { test: /\.ts$/, use: 'ts-loader', exclude: /node_modules/ }
         ]
     },
     plugins: [
@@ -21,5 +21,8 @@ module.exports = {
             template: path.join(__dirname, './src/index.html'),
             filename: 'index.html'
         })
-    ]
+    ],
+    resolve: {
+        extensions: ['.js', '.ts']
+    }
 }

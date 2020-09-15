@@ -12,7 +12,15 @@ module.exports = {
     module: {
         rules: [
             { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-            { test: /\.ts$/, use: 'ts-loader', exclude: /node_modules/ }
+            { test: /\.ts$/, use: 'ts-loader', exclude: /node_modules/ },
+            {
+                test:/\.(png|jpg)$/,
+                loader:'url-loader',
+                options:{
+                    limit:10,
+                    name:'img/[name][hash:10].[ext]'
+                }
+            }
         ]
     },
     plugins: [

@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     mode: 'development', //or production
-    entry: './src/main.ts',
+    entry: './src/main.js',
     output: {
         filename: '[name].[hash].js',
         path: path.join(__dirname, 'dist')
